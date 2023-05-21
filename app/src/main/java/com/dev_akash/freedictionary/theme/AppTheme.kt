@@ -3,9 +3,11 @@ package com.dev_akash.freedictionary.theme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
-import com.dev_akash.freedictionary.utils.AppUtils
 import com.dev_akash.freedictionary.theme.resources.AppColors
 import com.dev_akash.freedictionary.theme.resources.AppDimensions
 import com.dev_akash.freedictionary.theme.resources.AppTypography
@@ -22,8 +24,22 @@ import com.dev_akash.freedictionary.theme.resources.colorLightError
 import com.dev_akash.freedictionary.theme.resources.colorLightPrimary
 import com.dev_akash.freedictionary.theme.resources.colorLightTextPrimary
 import com.dev_akash.freedictionary.theme.resources.colorLightTextSecondary
+import com.dev_akash.freedictionary.utils.preferences.SharedPrefs
 
 object AppTheme {
+    var isDarkMode by mutableStateOf(
+        SharedPrefs.getBooleanParam(
+            SharedPrefs.IS_DARK_MODE,
+            false
+        )
+    )
+
+    fun toggleTheme() {
+        val finalValue = !isDarkMode
+        isDarkMode = finalValue
+        SharedPrefs.setBooleanParam(SharedPrefs.IS_DARK_MODE, finalValue)
+
+    }
     val colors: AppColors
         @Composable @ReadOnlyComposable get() = LocalColors.current
 
@@ -74,7 +90,7 @@ fun darkColorsPalette(
 fun FreeDictionaryTheme(
     content: @Composable () -> Unit
 ) {
-    val colors = if (AppUtils.isDarkMode) darkColorsPalette() else lightColorsPalette()
+    val colors = if (AppTheme.isDarkMode) darkColorsPalette() else lightColorsPalette()
 
     CustomAppTheme(
         colors = colors,

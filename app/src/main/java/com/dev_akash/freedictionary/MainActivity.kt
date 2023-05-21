@@ -35,7 +35,6 @@ import com.dev_akash.freedictionary.theme.FreeDictionaryTheme
 import com.dev_akash.freedictionary.theme.resources.colorDarkBackground
 import com.dev_akash.freedictionary.theme.resources.colorDarkPrimary
 import com.dev_akash.freedictionary.theme.resources.colorLightBackground
-import com.dev_akash.freedictionary.utils.AppUtils
 import com.dev_akash.freedictionary.utils.ui_utils.UIEvents
 import com.dev_akash.freedictionary.utils.ui_utils.getVectorIdByTheme
 import com.dev_akash.freedictonary.R
@@ -98,7 +97,7 @@ class MainActivity : ComponentActivity() {
                                 )
 
                                 IconButton(onClick = {
-                                    AppUtils.toggleTheme()
+                                    AppTheme.toggleTheme()
                                 }) {
                                     Icon(
                                         modifier = Modifier
@@ -166,7 +165,7 @@ class MainActivity : ComponentActivity() {
 
                                     WordInfoItem(wordInfo = wordInfo)
                                     if (index < state.wordInfoItems.size - 1) Divider(
-                                        color = if (AppUtils.isDarkMode) colorLightBackground else colorDarkBackground
+                                        color = if (AppTheme.isDarkMode) colorLightBackground else colorDarkBackground
                                     )
                                 }
                             }
@@ -184,7 +183,7 @@ class MainActivity : ComponentActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(
             this,
-            if (AppUtils.isDarkMode) R.color.status_bar_dark else R.color.status_bar_light
+            if (AppTheme.isDarkMode) R.color.status_bar_dark else R.color.status_bar_light
         )
     }
 }

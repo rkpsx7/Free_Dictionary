@@ -2,7 +2,7 @@ package com.dev_akash.freedictionary.theme.resources
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
-import com.dev_akash.freedictionary.utils.AppUtils
+import com.dev_akash.freedictionary.theme.AppTheme
 import com.dev_akash.freedictionary.theme.darkColorsPalette
 import com.dev_akash.freedictionary.theme.lightColorsPalette
 
@@ -60,7 +60,7 @@ class AppColors(
 
 }
 
-internal val LocalColors = when(AppUtils.isDarkMode){
+internal val LocalColors = when(AppTheme.isDarkMode){
     true ->{
         staticCompositionLocalOf{ darkColorsPalette() }
     }
