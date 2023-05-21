@@ -5,6 +5,7 @@ A Light Weight Free Dictionary App
 
 ## Features :
 - Search any word for detailed meaning.
+- Realtime Dark and Light Mode.
 - Offline caching for already searched words
 
 ## Tech Stack ✨
