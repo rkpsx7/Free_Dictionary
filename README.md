@@ -1,29 +1,43 @@
 # Free Dictionary
 A Light Weight Free Dictionary App
  
- ![GitHub Cards Preview]()
+ ![GitHub Cards Preview](https://github.com/rkpsx7/Free_Dictionary/blob/master/SampleImages/showcase.png)
 
+## Features :
+- Search any word for detailed meaning.
+- Offline caching for already searched words
 
 ## Tech Stack ✨
-- Android Studio
-- Android SDK
-- Firbase - Firestore
+- Android
 - Kotlin
+- Jetpack Compose
+- MVVM + Clean Architecture
+- RoomDB - (For Offline Caching)
+- Retrofit 2
+- Kotlin-Coroutines
+- Kotlin-Flows
+- Dagger-Hilt (DI)
 
-## Used Open Source-Libraries
-- [Glide](https://github.com/bumptech/glide)
-- [Circular Image View](https://github.com/hdodenhof/CircleImageView)
-- [COIL](https://github.com/coil-kt/coil.git)
-- [MP Android Charts](https://github.com/PhilJay/MPAndroidChart.git)
+## Open-Source Credits  🙌 🙌 🙌
+- Thanks to [Free Dictionary API](https://dictionaryapi.dev/) for providing a free REST-API for Dictionary.
 
 
 ## Instructions to clone this project ✌
-1. Open Android Studio.
-2. Go to File > New > Project From Version Control.
-3. Copy the link of this repositary.
-4. Paste the link in Url Box of Android Studio window and click on "Clone" button.
+```bash
+  open Terminal or CMD (Windows)
+  paste this command given below in Terminal
+  command:- git clone https://github.com/rkpsx7/Free_Dictionary.git
+  OR
 
-## [Check the app on playstore](https://play.google.com/store/apps/details?id=com.rkpsx7.moneymanager7)
+  Open Android Studio
+  Click -> File > New > Project From Version Control
+ 
+  and paste the url in URL box
+
+  URL :- https://github.com/rkpsx7/Free_Dictionary.git
+```
+
+<!-- ## [Check the app on playstore](https://play.google.com/store/apps/details?id=com.rkpsx7.moneymanager7) -->
 
 
 
