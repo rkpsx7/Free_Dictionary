@@ -2,6 +2,7 @@ package com.dev_akash.freedictionary
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -26,6 +27,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import com.dev_akash.freedictionary.feature_dictionary.presentation.WordInfoViewModel
 import com.dev_akash.freedictionary.feature_dictionary.presentation.screens.WordInfoItem
 import com.dev_akash.freedictionary.theme.AppTheme
@@ -50,6 +52,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            setStatusBarColor()
             FreeDictionaryTheme {
                 val viewModel: WordInfoViewModel by viewModels()
                 val state = viewModel.wordInfoState.value
@@ -175,6 +178,14 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun setStatusBarColor() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = ContextCompat.getColor(
+            this,
+            if (AppUtils.isDarkMode) R.color.status_bar_dark else R.color.status_bar_light
+        )
     }
 }
 
