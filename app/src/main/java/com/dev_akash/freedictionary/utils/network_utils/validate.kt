@@ -12,7 +12,7 @@ fun <T> Response<T>.validate(): Resource<T?> {
         }
 
         if (response.code()==404)
-            return Resource.Error("Found nothing\nPlease check the word")
+            return Resource.Error("Found nothing. Please check the word")
 
         if (response.code() == 403) {
             Log.d("rkpsx7DictionaryTesting", "403 aaya")
