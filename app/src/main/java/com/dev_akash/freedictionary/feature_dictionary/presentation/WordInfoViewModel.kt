@@ -75,4 +75,9 @@ class WordInfoViewModel @Inject constructor(
             isLoading = true
         )
     }
+
+    fun clearSearchField(){
+        _searchQuery.value = ""
+        _wordInfoState.value = WordInfoState()
+    }
 }

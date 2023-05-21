@@ -10,17 +10,17 @@ import com.dev_akash.freedictionary.feature_dictionary.domain.model.WordInfo
 data class WordInfoEntity(
     @PrimaryKey
     val id: Long? = null,
-    val meanings: List<Meaning>,
-    val phonetic: String,
-    val phonetics: List<Phonetic>,
-    val word: String
+    val meanings: List<Meaning>?,
+    val phonetic: String?,
+    val phonetics: List<Phonetic>?,
+    val word: String?
 ) {
     fun toWordInfo(): WordInfo {
         return WordInfo(
-            meanings,
-            phonetic,
-            phonetics,
-            word
+            meanings?: emptyList(),
+            phonetic?:"",
+            phonetics?: emptyList(),
+            word?:""
         )
     }
 }

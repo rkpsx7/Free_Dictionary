@@ -4,7 +4,7 @@ import com.dev_akash.freedictionary.feature_dictionary.data.local.entity.WordInf
 
 data class WordInfoDto(
     val meanings: List<MeaningDto>,
-    val phonetic: String,
+    val phonetic: String?,
     val phonetics: List<PhoneticDto>,
     val word: String
 ) {
