@@ -1,11 +1,12 @@
 # Free Dictionary
 A Light Weight Free Dictionary App
  
- ![GitHub Cards Preview](https://github.com/rkpsx7/Free_Dictionary/blob/master/SampleImages/showcase.png)
+ ![GitHub Cards Preview](https://github.com/rkpsx7/Free_Dictionary/blob/master/SampleResourcesGithub/showcase.png)
 
 ## Features :
 - Search any word for detailed meaning.
-- Offline caching for already searched words
+- Realtime __Dark__ and **Light Mode** using Jetpack-Compose.
+- **Offline-Caching** for already searched words.
 
 ## Tech Stack ✨
 - Android
@@ -17,6 +18,8 @@ A Light Weight Free Dictionary App
 - Kotlin-Coroutines
 - Kotlin-Flows
 - Dagger-Hilt (DI)
+
+## [Click here to try the APP](https://raw.githubusercontent.com/rkpsx7/Free_Dictionary/master/SampleResourcesGithub/Free_Dictionary.apk)🌅
 
 ## Open-Source Credits  🙌 🙌 🙌
 - Thanks to [Free Dictionary API](https://dictionaryapi.dev/) for providing a free REST-API for Dictionary.
@@ -37,7 +40,7 @@ A Light Weight Free Dictionary App
   URL :- https://github.com/rkpsx7/Free_Dictionary.git
 ```
 
-<!-- ## [Check the app on playstore](https://play.google.com/store/apps/details?id=com.rkpsx7.moneymanager7) -->
+
 
 
 
