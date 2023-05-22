@@ -33,9 +33,8 @@ class WordInfoRepoImpl(
                 )
             }
             remoteWordInfos.data?.let { wordInfoDtos ->
-
-                dao.deleteWordInfos(wordInfoDtos.map { it.word })
-                dao.insertWordInfoList(wordInfoDtos.map { it.toWordInfoEntity() })
+                dao.deleteWordInfos(wordInfoDtos.mapNotNull { it.word })
+                dao.insertWordInfoList(wordInfoDtos.mapNotNull { it.toWordInfoEntity() })
 
             }
         } catch (e: IOException) {

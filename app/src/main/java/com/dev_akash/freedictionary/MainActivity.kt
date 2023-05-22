@@ -146,7 +146,10 @@ class MainActivity : ComponentActivity() {
                                 },
                                 trailingIcon = {
                                     if (viewModel.searchQuery.value.isNotBlank()) {
-                                        IconButton(onClick = { viewModel.clearSearchField() }) {
+                                        IconButton(onClick = {
+                                            viewModel.clearSearchField()
+                                            keyboardController?.show()
+                                        }) {
                                             Icon(
                                                 imageVector = Icons.Filled.Clear,
                                                 contentDescription = "Clear",

@@ -13,14 +13,14 @@ data class WordInfoEntity(
     val meanings: List<Meaning>?,
     val phonetic: String?,
     val phonetics: List<Phonetic>?,
-    val word: String?
+    val word: String
 ) {
     fun toWordInfo(): WordInfo {
         return WordInfo(
             meanings?: emptyList(),
             phonetic?:"",
             phonetics?: emptyList(),
-            word?:""
+            word
         )
     }
 }
