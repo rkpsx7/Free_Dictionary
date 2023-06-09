@@ -19,7 +19,8 @@ A Light Weight Free Dictionary App
 - Kotlin-Flows
 - Dagger-Hilt (DI)
 
-## [Click here to try the APP](https://raw.githubusercontent.com/rkpsx7/Free_Dictionary/master/SampleResourcesGithub/Free_Dictionary.apk)🌅
+<!-- ## [Click here to try the APP](https://raw.githubusercontent.com/rkpsx7/Free_Dictionary/master/SampleResourcesGithub/Free_Dictionary.apk)🌅 -->
+## [Try the App on Playstore](https://play.google.com/store/apps/details?id=com.dev_akash.freedictonary)
 
 ## Open-Source Credits  🙌 🙌 🙌
 - Thanks to [Free Dictionary API](https://dictionaryapi.dev/) for providing a free REST-API for Dictionary.
