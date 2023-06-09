@@ -40,11 +40,14 @@ import com.dev_akash.freedictionary.utils.ui_utils.getVectorIdByTheme
 import com.dev_akash.freedictonary.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    @Inject
+    lateinit var audioPlayer: AudioPlayer
 
     @OptIn(ExperimentalComposeUiApi::class)
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -105,8 +108,8 @@ class MainActivity : ComponentActivity() {
                                             .width(24.dp),
                                         imageVector = ImageVector.vectorResource(
                                             id = getVectorIdByTheme(
-                                                lightRes = R.drawable.ic_moon,
-                                                darkRes = R.drawable.ic_white_sun
+                                                lightThemeRes = R.drawable.ic_moon,
+                                                darkThemeRes = R.drawable.ic_white_sun
                                             )
                                         ),
                                         contentDescription = "Toggle Theme",
@@ -166,7 +169,7 @@ class MainActivity : ComponentActivity() {
                                     val wordInfo = state.wordInfoItems[index]
                                     if (index > 0) Spacer(modifier = Modifier.height(10.dp))
 
-                                    WordInfoItem(wordInfo = wordInfo)
+                                    WordInfoItem(wordInfo = wordInfo, audioPlayer = audioPlayer)
                                     if (index < state.wordInfoItems.size - 1) Divider(
                                         color = if (AppTheme.isDarkMode) colorLightBackground else colorDarkBackground
                                     )
@@ -180,6 +183,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        audioPlayer.clearResources()
+        super.onDestroy()
     }
 
     private fun setStatusBarColor() {

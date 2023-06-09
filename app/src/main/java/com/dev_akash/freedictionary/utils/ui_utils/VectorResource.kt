@@ -6,8 +6,8 @@ import com.dev_akash.freedictionary.theme.AppTheme
 
 @Composable
 fun getVectorIdByTheme(
-    @DrawableRes lightRes: Int,
-    @DrawableRes darkRes: Int,
+    @DrawableRes lightThemeRes: Int,
+    @DrawableRes darkThemeRes: Int,
 ): Int {
-    return if (AppTheme.isDarkMode) darkRes else lightRes
+    return if (AppTheme.isDarkMode) darkThemeRes else lightThemeRes
 }
