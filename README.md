@@ -8,6 +8,7 @@ A Light Weight Free Dictionary App
 - Realtime __Dark__ and **Light Mode** using Jetpack-Compose.
 - **Offline-Caching** for already searched words.
 
+### This application is developed in process of LEARNING new concepts like Clean-Architecture, Kotlin-Flows.
 ## Tech Stack ✨
 - Android
 - Kotlin
